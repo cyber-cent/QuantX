@@ -23,7 +23,7 @@ Rscript xtrac/R/simulate_xtrac.R
 Rscript xtrac/tests/test_simulation.R
 ```
 
-**Research integrity note:** the source paper reports a terminal value of $91.43bn for Aliu-XtraC versus $90bn for a traditional model. The paper's full code and daily return series were not available, so those results have not been independently reproduced. The included R prototype uses synthetic returns and does **not** claim to validate the reported $1.43bn alpha.
+**Research integrity note:** the source paper reports a terminal value of $91.43bn for Aliu-XtraC versus $90bn for a traditional model. The paper's full code and daily return series were not available, so those results have not been independently reproduced. The included R prototype uses synthetic returns and does **not** claim to validate the reported $1.43bn alpha. There is also an allocation ambiguity: the paper's stated core formula gives 89% of AUM when the drawdown limit is 10% and the buffer is 1%, while this prototype uses a simplified 99% core + 1% buffer split. That formula must be clarified before treating this as a faithful implementation.
 
 ### 2. FIFA World Cup Over 1.5 Goals
 
