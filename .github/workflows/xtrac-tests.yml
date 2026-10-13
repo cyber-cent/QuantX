@@ -1,0 +1,30 @@
+name: Aliu-XtraC simulation tests
+
+on:
+  push:
+    paths:
+      - "xtrac/**"
+      - ".github/workflows/xtrac-tests.yml"
+  pull_request:
+    paths:
+      - "xtrac/**"
+      - ".github/workflows/xtrac-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "release"
+
+      - name: Run simulation tests
+        run: Rscript xtrac/tests/test_simulation.R
