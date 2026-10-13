@@ -42,6 +42,9 @@ run_xtrac_simulation <- function(
   baseline_value <- initial_aum
   baseline_peak <- initial_aum
   baseline_frozen <- FALSE
+  # Simplifying assumption: core + buffer sum to initial AUM. This is not
+  # identical to the paper's Vcore = AUM0 * (1 - MDDlimit - XtraClimit)
+  # formula; see xtrac/README.md for the unresolved 10% allocation ambiguity.
   core_value <- initial_aum * (1 - buffer_fraction)
   core_peak <- core_value
   core_frozen <- FALSE
