@@ -28,3 +28,6 @@ jobs:
 
       - name: Run simulation tests
         run: Rscript xtrac/tests/test_simulation.R
+
+      - name: Run sensitivity-analysis tests
+        run: Rscript xtrac/tests/test_sensitivity.R
